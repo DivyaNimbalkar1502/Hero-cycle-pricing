@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Add Part</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Add Part</h1>
+
+<form action="/parts/add" method="post">
+
+<div class="form-group">
+
+<label>Part Name</label>
+
+<input type="text" name="name" required> </div>
+
+<div class="form-group">
+
+<label>Price</label>
+
+<input type="number" name="price" required> </div>
+<button class="btn">Save
+</button>
+
+<a th:href="@{/parts}" class="btn">Home</a>
+</form>
+</div>
+</body>
+</html>

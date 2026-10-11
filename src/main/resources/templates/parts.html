@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Manage Parts</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Manage Parts</h1>
+
+    <br>
+
+    <a th:href="@{parts/add}" class="btn">
+        Add Part
+    </a>
+
+    &nbsp;
+
+    <a th:href="@{/}" class="btn">
+        Home
+    </a>
+
+    <br><br>
+
+    <table>
+        <thead>
+            <tr>
+               <th>ID</th>
+                <th>Part Name</th>
+                <th>Price</th>
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr th:each="part : ${parts}">
+
+                <td th:text="${part.id}"></td>
+
+                <td th:text="${part.name}"></td>
+
+                <td th:text="${part.price}"></td>
+
+                <td>
+
+                    <div class="action-buttons">
+
+                        <a th:href="'/parts/edit?id='+${part.id}" class="edit-btn">Edit </a>
+
+                        <a th:href="'/parts/delete?id='+${part.id}" class="delete-btn">  Delete   </a>
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+</html>
